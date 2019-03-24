@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   titleApp = 'blog2';
-  
+  // arrays of posts
   posts = [
     {
       title : 'post 1',
