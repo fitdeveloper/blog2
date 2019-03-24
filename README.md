@@ -1,3 +1,4 @@
+this is an Angular project created with cmd ng new blog2 --style=scss --skip-tests=true
 # Blog2
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.6.
