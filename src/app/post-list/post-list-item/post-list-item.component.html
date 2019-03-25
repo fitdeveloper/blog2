@@ -1,20 +1,36 @@
-<div class="border m-2 p-2 rounded border-primary">
-  <div class="row" >
+<div [ngClass]="{'list-group-item' : true,
+                           'list-group-item-danger' : getPost().loveIts < 0,
+                           'list-group-item-success' : getPost().loveIts > 0}">
+  <div class="row">
     <div class="col-lg-9">
-      <h2 title="titre de poste"><strong>titre</strong></h2>
+      <h2 title="titre de poste">
+        <strong>
+          <div style="color: red" *ngIf="getPost().loveIts < 0">
+            titre {{ getPost().loveIts }}
+          </div>
+          <div style="color: green" *ngIf="getPost().loveIts > 0">
+            titre {{ getPost().loveIts }}
+          </div>
+          <div *ngIf="getPost().loveIts === 0">
+            titre {{ getPost().loveIts }}
+          </div>
+        </strong>
+      </h2>
     </div>
     <div class="col-lg-3">
-      <div title="date">date</div>
+      <div title="date" style="color: gray; font-size: x-large"><i>{{ getPost().created_at | date : 'short' | uppercase
+        }} </i></div>
     </div>
   </div>
   <div class="row">
     <div class="col-lg-12">
-      <p title="contenu de post">contenu contenu contenu contenu contenu contenu contenu contenu contenu
-        contenu contenu contenu contenu contenu contenu contenu contenu contenu
-        contenu contenu contenu contenu contenu contenu contenu contenu contenu </p>
+      <p title="contenu de post"> {{ getPost().content}} </p>
       <div>
-        <button title="loveIt button" type="button" class="btn btn-success m-1">love It</button>
-        <button title="don't loveIt button" type="button" class="btn btn-danger m-1">don't Love It</button>
+        <button title="loveIt button" type="button" class="btn btn-success m-1" (click)="loveItButton()">love It
+        </button>
+        <button title="don't loveIt button" type="button" class="btn btn-danger m-1" (click)="dontLoveItButton()">don't
+          Love It
+        </button>
       </div>
     </div>
   </div>

@@ -5,9 +5,6 @@
 </div>
 <div class="row mt-auto">
   <div class="col-xs-12">
-  <app-post-list-item></app-post-list-item>
-  <app-post-list-item></app-post-list-item>
-  <app-post-list-item></app-post-list-item>
-  <app-post-list-item></app-post-list-item>
+  <app-post-list-item *ngFor="let post of arrayPosts"  [post]="post"></app-post-list-item>
   </div>
 </div>
