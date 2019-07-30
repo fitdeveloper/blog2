@@ -16,12 +16,6 @@
   </nav>
 </div>
 <div class="container">
-  <div *ngIf="connectionStatus === 'online'" class="online">
-    <span>{{connectionStatusMessage}}</span>
-  </div>
-  <div *ngIf="connectionStatus === 'offline'" class="offline">
-    <span>{{connectionStatusMessage}}</span>
-  </div>
     <router-outlet></router-outlet>
 </div>
 

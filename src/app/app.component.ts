@@ -16,7 +16,7 @@ export class AppComponent implements OnInit {
   }
 
 
-  constructor(private postService: PostService, private connectionService: ConnectionService) {
+  constructor(private postService: PostService) {
   }
 
 // arrays of posts

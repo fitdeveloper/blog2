@@ -77,4 +77,19 @@ export class PostService {
     );
   }
 
+
+  deletPostService() {
+    this.httpClient.delete('https://blog2-a66a8.firebaseio.com/posts.json').subscribe(
+      (response: Post[]) => {
+        if (response !== null) {
+          this.posts = response;
+          this.emitPosts();
+        }
+      },
+      (error) => {
+        console.log('Erreur ! : ' + error);
+      }
+    );
+  }
+
 }

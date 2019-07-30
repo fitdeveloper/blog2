@@ -36,4 +36,21 @@ export class PostListComponent implements OnInit, OnDestroy {
     this.router.navigate(['/new']);
   }
 
+  sortByTitle() {
+    this.arrayPosts.sort((a, b) => (a.title).localeCompare(b.title));
+    this.postService.posts = this.arrayPosts;
+    this.postService.emitPosts();
+    this.postService.deletPostService();
+    this.postService.savePostService();
+
+  }
+
+
+  sortByLikes() {
+    this.arrayPosts.sort((a, b) =>   b.loveIts - a.loveIts);
+    this.postService.posts = this.arrayPosts;
+    this.postService.emitPosts();
+    this.postService.deletPostService();
+    this.postService.savePostService();
+  }
 }

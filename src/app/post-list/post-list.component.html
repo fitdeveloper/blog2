@@ -9,17 +9,17 @@
     <div class="row mt-auto">
       <div class="col-12">
         <div  class="row" *ngIf="arrayPosts.length > 0">
-          <h2 class="col-4"> trier la list</h2>
+          <h2 class="col-4"> trier la liste</h2>
           <div class="col-8">
-            <button type="button" class="btn btn-secondary btn-sm m-1 float-right">trier alphabetique</button>
-            <button type="button" class="btn btn-secondary btn-sm m-1 float-right">trier par nombre de likes</button>
+            <button type="button" class="btn btn-secondary btn-sm m-1 float-right" (click)="sortByTitle()">trier alphabétique</button>
+            <button type="button" class="btn btn-secondary btn-sm m-1 float-right" (click)="sortByLikes()">trier par le nombre de LoveIts</button>
           </div>
 
 
         </div>
         <app-post-list-item *ngFor="let post of arrayPosts"  [post]="post"></app-post-list-item>
         <div *ngIf="arrayPosts.length === 0 ">
-          <h1> aucune posts trouvé veuillez ajjouter un post</h1>
+          <h1> Aucune poste . veuillez ajouter un poste</h1>
           <button class="btn btn-primary" (click)="NewPost()"> Nouveau Post </button>
         </div>
       </div>

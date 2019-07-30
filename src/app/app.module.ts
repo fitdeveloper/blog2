@@ -11,9 +11,9 @@ import { FourOhFourComponent } from './four-oh-four/four-oh-four.component';
 import {PostService} from './services/post.service';
 import {HttpClientModule} from '@angular/common/http';
 import {ReactiveFormsModule} from '@angular/forms';
-import {ConnectionService} from 'ng-connection-service';
 
 const appRoutes: Routes = [
+  {path: '', component: PostListComponent},
   {path: 'posts', component: PostListComponent},
   {path: 'new',  component: NewPostComponent},
   {path: 'not-found', component: FourOhFourComponent},
