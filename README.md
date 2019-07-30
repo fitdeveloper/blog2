@@ -16,8 +16,17 @@ List des postes vides :
 
 Formulaire Nouveau poste : 
 
+![Formulaire Nouveau poste](/images/nouveauPost.PNG)
+
 List des postes : 
+
+![List des postes](/images/listPosts.PNG)
 
 Les buttons du trie : 
 
+![Les buttons du trie](/images/triPost.PNG)
+
 Les buttons du loveIts : 
+
+![Les buttons du loveIts](/images/loveItsBadge.PNG)
+
