@@ -1,10 +1,30 @@
-<div class="row">
-  <div class="col-xs-12">
-  <h1>Posts</h1>
+<div class="col-12">
+  <div class="align-content-center">
+    <div class="row">
+      <div class="col-12">
+        <h1><strong>Posts</strong></h1>
+      </div>
+      <br>
+    </div>
+    <div class="row mt-auto">
+      <div class="col-12">
+        <div  class="row" *ngIf="arrayPosts.length > 0">
+          <h2 class="col-4"> trier la list</h2>
+          <div class="col-8">
+            <button type="button" class="btn btn-secondary btn-sm m-1 float-right">trier alphabetique</button>
+            <button type="button" class="btn btn-secondary btn-sm m-1 float-right">trier par nombre de likes</button>
+          </div>
+
+
+        </div>
+        <app-post-list-item *ngFor="let post of arrayPosts"  [post]="post"></app-post-list-item>
+        <div *ngIf="arrayPosts.length === 0 ">
+          <h1> aucune posts trouvé veuillez ajjouter un post</h1>
+          <button class="btn btn-primary" (click)="NewPost()"> Nouveau Post </button>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
-<div class="row mt-auto">
-  <div class="col-xs-12">
-  <app-post-list-item *ngFor="let post of arrayPosts"  [post]="post"></app-post-list-item>
-  </div>
-</div>
+
+

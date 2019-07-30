@@ -6,13 +6,13 @@
       <h2 title="titre de poste">
         <strong>
           <div style="color: red" *ngIf="getPost().loveIts < 0">
-            titre {{ getPost().loveIts }}
+            {{ post.title  }}
           </div>
           <div style="color: green" *ngIf="getPost().loveIts > 0">
-            titre {{ getPost().loveIts }}
+            {{ post.title  }}
           </div>
           <div *ngIf="getPost().loveIts === 0">
-            titre {{ getPost().loveIts }}
+            {{ post.title  }}
           </div>
         </strong>
       </h2>
@@ -27,11 +27,19 @@
       <p title="contenu de post"> {{ getPost().content}} </p>
       <div>
         <button title="loveIt button" type="button" class="btn btn-success m-1" (click)="loveItButton()">love It
+          <span class="badge badge-light" *ngIf="getPost().loveIts > 0">{{ getPost().loveIts }}</span>
         </button>
         <button title="don't loveIt button" type="button" class="btn btn-danger m-1" (click)="dontLoveItButton()">don't
           Love It
+          <span class="badge badge-light" *ngIf="getPost().loveIts < 0">{{ -getPost().loveIts }}</span>
+
+        </button>
+        <button type="button" class="btn btn-danger m-1 float-right" (click)="supprimerPost(post.id)">
+          Supprimer Post
         </button>
       </div>
+
+
     </div>
   </div>
 </div>
